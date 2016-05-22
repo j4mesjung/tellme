@@ -14,3 +14,15 @@ export function next(state){
     entries: entries.skip(2)
   });
 };
+
+export function vote(state, entry){
+
+  // reach into the nested data structure path ['vote', 'tally', 'Trainspotting']
+  // apply function found at keyPath
+  // if there are no keys along the path, create new Maps and initialize with 0
+  return state.updateIn(
+    ['vote', 'tally', entry],
+    0,
+    tally => tally + 1
+  );
+};
