@@ -38,13 +38,13 @@ export function next(state){
   };
 };
 
-export function vote(state, entry){
+export function vote(voteState, entry){
 
   // reach into the nested data structure path ['vote', 'tally', 'Trainspotting']
   // apply function found at keyPath
   // if there are no keys along the path, create new Maps and initialize with 0
-  return state.updateIn(
-    ['vote', 'tally', entry],
+  return voteState.updateIn(
+    ['tally', entry],
     0,
     tally => tally + 1
   );
