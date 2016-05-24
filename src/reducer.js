@@ -11,6 +11,7 @@ export default function reducer(state = INITIAL_STATE, action){
     case 'NEXT':
       return next(state);
     case 'VOTE':
+      // look for the vote key first, reducer breaks apart state to only give relevant part
       return state.update('vote',
                           voteState => vote(voteState, action.entry));
   }
