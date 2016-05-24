@@ -148,5 +148,4 @@ describe('application logic', () => {
 
   });
 
-
 });
